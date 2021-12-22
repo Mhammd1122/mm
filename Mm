@@ -1,0 +1,19 @@
+Public Shared Function Encode(ByVal input As String) As String
+    Dim inputc As Char() = input.ToCharArray()
+    Dim pasA As String = ""
+    Dim pasB As String = ""
+    Dim x As Boolean = True
+
+    For Each ch As Char In inputc
+
+        If x = True Then
+            pasA += ch
+            x = False
+        Else
+            x = True
+            pasB += ch
+        End If
+    Next
+
+    Return pasA & pasB
+End Function
